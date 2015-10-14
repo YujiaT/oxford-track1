@@ -53,7 +53,8 @@ pmback$winddirection = 180
 pm2 = rbind(pmfor, pmback)
 
 boxplot(pm2$winddirection,pm2$Difference_in_Small, main = "Difference in size 1-5 um PM after passing the farm", ylab = "#PM difference from upwind to downwind")
-summary(lm(pm2$Difference_in_Small~pm2$winddirection))
+summary(lm(pm2$Difference_in_Small~pm2$NE_Small))
+plot(pm2$Difference_in_Small~pm2$NE_Small)
 
 total$retentiontime = 200 / (total$WindCurrent)
 x = total[total$retentiontime != Inf,]

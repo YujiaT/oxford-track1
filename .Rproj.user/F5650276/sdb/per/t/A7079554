@@ -1,0 +1,17 @@
+{
+    "contents" : "PM = read.csv(\"PM.csv\")\nday1 = read.csv(\"day1.csv\")\n#no recording time and date!\nwind = read.csv(\"WeatherData.csv\")\n\nsource(\"libraries.R\")\n\ntotal = merge(PM, wind)\n#wind data: 4/9-4/13\n\nplot(day1$DateNum, day1$Difference_in_Small)\nplot(day1$DateNum, day1$SW_Small)\n\nwindback = subset(wind, wind$Winddirection == \"180\")\nwindfor = subset(wind, wind$Winddirection > 300)\n\n#half of time wind is backwards \n#7am - 7pm wind 180 backward\n#7pm - 7am wind 315 forward --- should get a large difference\n#back means away from the industrial PM source\n\nback = total[total$Winddirection == \"180\",]\nforw = total[total$Winddirection > 300, ]\nplot(forw$DateNum, forw$SW_Small)\nplot(back$DateNum, back$SW_Small)\nplot(back$Difference_in_Small)\nsummary(back$Difference_in_Small)\nsummary(forw$Difference_in_Small)\n#this is significant!\n\nsummary(lm(total$Difference_in_Small ~ total$Winddirection))\n\n#not enough data\n#just assume the 7-7 period wind direction is constant for all?\n\npmfor1 = PM[7:17,]\npmfor2 = PM[39:51,]\npmfor3 = PM[65:80,]\npmfor = rbind(pmfor1,pmfor2,pmfor3)\npmfor$winddirection = 315\npmfor$industryPM = \"with industrial PM input\"\nsummary(pmfor$Difference_in_Small)\npmback1 = PM[1:6,]\npmback2 = PM[18:38,]\npmback3 = PM[52:64,]\npmback4 = PM[81:93,]\npmback = rbind(pmback1,pmback2,pmback3,pmback4)\npmback$industryPM = \"without industrial PM input\"\npmback$Difference_in_Small = -1 * pmback$Difference_in_Small\nsummary(pmback$Difference_in_Small)\npmback$winddirection = 180\n\npm2 = rbind(pmfor, pmback)\n\nboxplot(pm2$winddirection,pm2$Difference_in_Small, main = \"Difference in size 1-5 um PM after passing the farm\", ylab = \"#PM difference from upwind to downwind\")\nsummary(lm(pm2$Difference_in_Small~pm2$NE_Small))\nplot(pm2$Difference_in_Small~pm2$NE_Small)\n\ntotal$retentiontime = 200 / (total$WindCurrent)\nx = total[total$retentiontime != Inf,]\ny = total[total$retentiontime == Inf,]\ny$retentiontime = 200\ntotal = rbind(x,y)\n\nsummary(lm(total$Difference_in_Small~ total$retentiontime))\n\nplot(PM$Difference_in_Small)\nsummary(PM$Difference_in_Small)\nplot(total$Difference_in_Small)\n\n",
+    "created" : 1444778839101.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2761347232",
+    "id" : "A7079554",
+    "lastKnownWriteTime" : 1444794925,
+    "path" : "D:/Oxford Track Project/oxford-track1/priliminary.R",
+    "project_path" : "priliminary.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

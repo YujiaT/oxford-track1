@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1444794791560.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "1D18FF6D",
+    "lastKnownWriteTime" : 1702323561,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "4wy63mm2rb",
+        "caption" : "pm2",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=pm2&cache_key=4wy63mm2rb",
+        "displayedObservations" : 93,
+        "environment" : "",
+        "object" : "pm2",
+        "totalObservations" : 93,
+        "variables" : 9
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

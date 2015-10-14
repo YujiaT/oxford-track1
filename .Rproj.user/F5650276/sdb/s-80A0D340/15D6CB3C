@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1444779454322.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "15D6CB3C",
+    "lastKnownWriteTime" : 1952531568,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "y9u1csof7y",
+        "caption" : "pmback",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=pmback&cache_key=y9u1csof7y",
+        "displayedObservations" : 53,
+        "environment" : "",
+        "object" : "pmback",
+        "totalObservations" : 53,
+        "variables" : 7
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

@@ -38,17 +38,21 @@ pmfor2 = PM[39:51,]
 pmfor3 = PM[65:80,]
 pmfor = rbind(pmfor1,pmfor2,pmfor3)
 pmfor$winddirection = 315
+pmfor$industryPM = "with industrial PM input"
 summary(pmfor$Difference_in_Small)
 pmback1 = PM[1:6,]
 pmback2 = PM[18:38,]
 pmback3 = PM[52:64,]
 pmback4 = PM[81:93,]
 pmback = rbind(pmback1,pmback2,pmback3,pmback4)
+pmback$industryPM = "without industrial PM input"
+pmback$Difference_in_Small = -1 * pmback$Difference_in_Small
 summary(pmback$Difference_in_Small)
 pmback$winddirection = 180
 
 pm2 = rbind(pmfor, pmback)
-boxplot(pm2$winddirection,pm2$Difference_in_Small)
+
+boxplot(pm2$winddirection,pm2$Difference_in_Small, main = "Difference in >1um PM after passing the farm", ylab = "#PM difference from upwind to downwind")
 summary(lm(pm2$Difference_in_Small~pm2$winddirection))
 
 total$retentiontime = 200 / (total$WindCurrent)

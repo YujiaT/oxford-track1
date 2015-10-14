@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1444844548583.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "15242024",
+    "lastKnownWriteTime" : 1702323561,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "tzi6e7dfkp",
+        "caption" : "pmfor",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=pmfor&cache_key=tzi6e7dfkp",
+        "displayedObservations" : "40",
+        "environment" : "",
+        "object" : "pmfor",
+        "totalObservations" : "40",
+        "variables" : "9"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

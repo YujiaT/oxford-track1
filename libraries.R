@@ -1,5 +1,6 @@
 #Libraries
 
+library(lmerTest)
 library(stats4)
 library(estimability)
 library(plyr)

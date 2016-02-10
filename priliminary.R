@@ -63,6 +63,7 @@ pmback$industryPM = "without industrial PM input"
 pmback$Difference_in_Small = -1 * pmback$Difference_in_Small
 
 plot(pmback$coverage, pmback$Difference_in_Small)
+boxplot(pmback$coverage, pmback$Difference_in_Small)
 summary(lm(pmback$Difference_in_Small ~ pmback$coverage))
 
 
